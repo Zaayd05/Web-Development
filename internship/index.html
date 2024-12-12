@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <img src="pic/Screenshot 2024-12-10 193438.png" alt="ZAAYD" />
+        <h1>KOSHA RIYAZ ZAAYD AHMED</h1>
+        <p>A crypto trader and finance enthusiast with a passion for web development. Former pro gamer with many achievements, like to work in JavaScript, HTML, React, and Python.</p>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skill">
+            <img src="pic/html&css.jpg" alt="HTML & CSS Logo" class="skill-icon" />
+            <p>HTML&CSS</p>
+            <div class="progress-bar html-css-skill"></div>
+            <span class="percentage">80%</span>
+        </div>
+        <div class="skill">
+            <img src="pic/js.png" alt="JavaScript Logo" class="skill-icon" />
+            <p>JavaScript</p>
+            <div class="progress-bar js-skill"></div>
+            <span class="percentage">80%</span>
+        </div>
+        <div class="skill">
+            <img src="pic/py.jpg" alt="Python Logo" class="skill-icon" />
+            <p>Python</p>
+            <div class="progress-bar python-skill"></div>
+            <span class="percentage">65%</span>
+        </div>
+        <div class="skill">
+            <img src="pic/react.png" alt="React Logo" class="skill-icon" />
+            <p>React</p>
+            <div class="progress-bar react-skill"></div>
+            <span class="percentage">75%</span>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project" onclick="openModal('Project Title', 'Short description of the project.')">
+            <h3>Ecommerce Website</h3>
+            <p>Ecommerce Website using React</p>
+            <a href="https://zaaydstore.vercel.app/">Live Demo</a>
+            <a href="github-repo-link">GitHub Repo</a>
+        </div>
+        <div class="project" onclick="openModal('Project Title', 'Short description of the project.')">
+            <h3>Job card</h3>
+            <p>Its a job card for car servicing. I made it using React</p>
+            <a href="https://techauto.vercel.app/">Live Demo</a>
+            <a href="https://github.com/Zaayd05/tech-auto">GitHub Repo</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/zaayd-ahmed-b70a27241/">LinkedIn</a>
+            <a href="https://github.com/Zaayd05">GitHub</a>
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById('skills').classList.add('animate');
+        };
+    </script>
+</body>
+</html>
