@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zblogs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // JavaScript function to search for blog posts by name or summary
+        function searchBlog() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const articles = document.querySelectorAll('.blog-container');
+            let found = false;
+
+            // Check if the search input is empty
+            if (searchInput.trim() === "") {
+                alert('Please enter a search term.');
+                return; // Exit the function if the input is empty
+            }
+
+            articles.forEach(article => {
+                const title = article.querySelector('h3').textContent.toLowerCase();
+                const summary = article.querySelector('p').textContent.toLowerCase();
+                const link = article.querySelector('a').href; // Get the link of the article
+
+                if (title.includes(searchInput) || summary.includes(searchInput)) {
+                    window.location.href = link; // Redirect to the article link
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                alert('Article not available');
+            }
+        }
+
+        // Add event listener for the Enter key
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const searchInput = document.getElementById('search');
+            searchInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    searchBlog(); // Call the search function when Enter is pressed
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Zblogs Logo" id="logo">
+        <h1>Zblogs</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <input type="text" id="search" placeholder="Search...">
+        <button onclick="searchBlog()">Search</button>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <p class="fade-in">To The Readers From A Reader</p>
+        </section>
+        <section id="blog">
+            <h2>Latest Posts</h2>
+            <div class="blog-container">
+                <article>
+                    <h3>Gentleman Within</h3>
+                    <p>A men’s lifestyle and fashion blog by Khoi Nguyen, providing style tips and confidence-building advice for men. <a href="https://www.gentlemanwithin.com/">Read more...</a></p>
+                </article>
+                <img src="img/article1.jpg" alt="Image for Blog Post 1" class="blog-image">
+            </div>
+            <div class="blog-container">
+                <article>
+                    <h3>10 Tips for Writing Engaging Content</h3>
+                    <p>The article offers ten tips for writing engaging blog posts, focusing on lists, case studies, images, value, simplicity, and personal stories. <a href="https://www.marketingprofs.com/articles/2022/47799/10-tips-for-writing-engaging-blog-posts">Read more...</a></p>
+                </article>
+                <img src="img/article2.jpg" alt="Image for Blog Post 2" class="blog-image">
+            </div>
+            <div class="blog-container">
+                <article>
+                    <h3>How to Promote Your Business Blog Effectively</h3>
+                    <p>The key to achieving these goals is connecting to the right audience. <a href="https://mailchimp.com/resources/how-to-promote-your-small-business-blog/">Read more...</a></p>
+                </article>
+                <img src="img/article3.jpg" alt="Image for Blog Post 3" class="blog-image">
+            </div>
+            <div class="blog-container">
+                <article>
+                    <h3>Living Well Spending Less</h3>
+                    <p>A blog by Ruth Soukup focused on budget-friendly living, financial tips, and managing the challenges of day-to-day life. <a href="https://www.livingwellspendingless.com/">Read more...</a></p>
+                </article>
+                <img src="img/article4.jpg" alt="Image for Blog Post 4" class="blog-image">
+            </div>
+            <div class="blog-container">
+                <article>
+                    <h3>Night Photography Settings</h3>
+                    <p>A detailed tutorial by Andy Feliciotti on capturing stunning night photography, featuring step-by-step instructions and visuals. <a href="ihitthebutton.com">Read more...</a></p>
+                </article>
+                <img src="img/article5.jpg" alt="Image for Blog Post 5" class="blog-image">
+            </div>
+            <div class="blog-container">
+                <article>
+                    <h3>Cupcakes and Cashmere</h3>
+                    <p>A popular lifestyle blog by Emily Schuman that combines fashion, food, home decor, and motherhood advice. <a href="https://www.cupcakesandcashmere.com/">Read more...</a></p>
+                </article>
+                <img src="img/article6.jpg" alt="Image for Blog Post 6" class="blog-image">
+            </div>
+            <div class="blog-container">
+                <article>
+                    <h3>Nerd Fitness</h3>
+                    <p>A fitness blog for "nerds, misfits, and mutants" by Steve Kamb, offering actionable tips on fitness, diet, and mindset for those looking to level up their health. <a href="https://www.nerdfitness.com/">Read more...</a></p>
+                </article>
+                <img src="img/article7.jpg" alt="Image for Blog Post 7" class="blog-image">
+            </div>
+            <div class="blog-container">
+                <article>
+                    <h3>Brain Pickings</h3>
+                    <p>A blog by Maria Popova that explores art, science, philosophy, and literature through thought-provoking essays and insights. <a href="https://www.themarginalian.org/">Read more...</a></p>
+                </article>
+                <img src="img/article8.jpg" alt="Image for Blog Post 8" class="blog-image">
+            </div>
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Here is how you can reach us...</p>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Zaayd. Contact: <a href="mailto:zaaydahmed@gmail.com">zaaydahmed@gmail.com</a></p>
+    </footer>
+</body>
+</html>
